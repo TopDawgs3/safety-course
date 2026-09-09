@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --phoenix-crimson: #c8102e;
+  --phoenix-black: #0a0a0a;
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0a0a0a;
+  color: #0a0a0a;
+  min-height: 100dvh;
+}
+
+@layer utilities {
+  .snap-feed {
+    scroll-snap-type: y proximity;
+  }
+  .snap-card {
+    scroll-snap-align: start;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@media print {
+  body {
+    background: white !important;
+  }
+  .print\:hidden {
+    display: none !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .certificate-sheet {
+    box-shadow: none !important;
+    border: 2px solid #c8102e !important;
+  }
+}
